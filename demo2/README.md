@@ -1,0 +1,1 @@
+当鼠标放置在li元素上，会在img-preview里展示当前li元素的data-img对应的图片。
