@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>js</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <ul class="ct">
+        <li data-img="http://cdn.jirengu.com/book.jirengu.com/img/11.jpg">鼠标放置查看图片1</li>
+        <li data-img="http://cdn.jirengu.com/book.jirengu.com/img/13.jpg">鼠标放置查看图片2</li>
+        <li data-img="http://cdn.jirengu.com/book.jirengu.com/img/14.jpg">鼠标放置查看图片3</li>
+    </ul>
+    <div class="img-preview"></div>
+--------------------------------
+    <script>
+        var ct = $(".ct");
+        var imgPreview = $(".img-preview");
+        var newImg = document.createElement("img");
+        function $(id) {
+            return document.querySelector(id);
+        }
+        ct.addEventListener("mouseover",function(e){
+            var value = e.target.getAttribute("data-img");
+            newImg.setAttribute("src",value);
+            imgPreview.appendChild(newImg);
+        });
+        ct.addEventListener("mouseout",function(){
+            imgPreview.removeChild(newImg);
+        });
+    </script>
+--------------------------------
+</body>
+</html>
